@@ -1,0 +1,13 @@
+:root {
+  /* Colors */
+  --color-site-background:    hsl(  9,   2%,  29%);
+  --color-site-foreground:    hsl(  0,   0%, 100%);
+  --color-display-background: hsl(  0,   0%, 100%);
+  --color-display-foreground: hsl(223,  55%,  41%);
+  --color-button-background:  hsl( 27,  11%,  72%);
+  --color-button-foreground:  hsl(  0,   0%,   0%);
+  --color-enter-background:   hsl(140, 100%,  25%);
+  --color-enter-foreground:   hsl(  0,   0%,   0%);
+  --color-clear-background:   hsl(  2,  91%,  57%);
+  --color-clear-foreground:   hsl(  0,   0%,   0%);
+}
