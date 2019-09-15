@@ -11,3 +11,10 @@
   --color-clear-background:   hsl(  2,  91%,  57%);
   --color-clear-foreground:   hsl(  0,   0%,   0%);
 }
+
+body {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none;
+}
