@@ -18,7 +18,7 @@ let clearButton;
 let resetTarget;
 
 /* Temp Variables */
-let previousInteraction;
+let previousInteraction = [];
 
 /* Functions */
 const updateDisplay = () => {
@@ -85,6 +85,7 @@ const resetTargetHandler = event => {
     clearStoredCode();
     storedCode = undefined;
     needStoredCode = true;
+    changeInteraction(GET_CODE_INTERACTION);
     changeInteraction(`Code Reset! - ${GET_CODE_INTERACTION}`);
     setTimeout(revertInteraction, 3000);
   }
@@ -148,13 +149,12 @@ const clearStoredCode = () => {
 }
 
 const changeInteraction = (newInteraction) => {
-  previousInteraction = interaction.innerText;
+  previousInteraction.push(interaction.innerText);
   interaction.innerText = newInteraction;
 }
 
 const revertInteraction = () => {
-  interaction.innerText = previousInteraction;
-  previousInteraction = undefined;
+  interaction.innerText = previousInteraction.pop();
 }
 
 const initialize = () => {

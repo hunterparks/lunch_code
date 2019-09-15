@@ -17,4 +17,7 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE/Edge */
   user-select: none;
+
+  background: var(--color-site-background);
+  color: var(--color-site-foreground);
 }
