@@ -86,7 +86,7 @@ const resetTargetHandler = event => {
     storedCode = undefined;
     needStoredCode = true;
     changeInteraction(GET_CODE_INTERACTION);
-    changeInteraction(`Code Reset! - ${GET_CODE_INTERACTION}`);
+    changeInteraction('Code Reset!');
     setTimeout(revertInteraction, 3000);
   }
 }
