@@ -31,12 +31,24 @@ const updateDisplay = () => {
 const clearReset = () => {
   resetCount = 0;
   resetTarget.parentElement.style.color = '';
-}
+};
+
+const clearAll = () => {
+  enteredCode = '';
+  updateDisplay();
+};
 
 const addEnteredDigit = (digit) => {
   if (enteredCode.length === CODE_SIZE)
     return;
   enteredCode += digit;
+};
+
+const removeEnteredDigit = () => {
+  const ecLength = enteredCode.length;
+  if (ecLength <= 0)
+    return;
+  enteredCode = enteredCode.substring(0, ecLength - 1);
 };
 
 const primaryButtonHandler = event => {
@@ -55,16 +67,16 @@ const enterButtonHandler = event => {
     storedCode = getStoredCode();
     needStoredCode = false;
     revertInteraction();
-    clearButtonHandler();
+    clearAll();
     return;
   }
   if (enteredCode === storedCode) {
-    alert('Wooo!');
+    alert('That is your code!\n\nGreat job!');
   }
   else {
-    alert('Try again!');
+    alert('So close!\n\nTry your code again!');
   }
-  clearButtonHandler();
+  clearAll();
 };
 
 const resetTargetHandler = event => {
@@ -89,16 +101,16 @@ const resetTargetHandler = event => {
     changeInteraction('Code Reset!');
     setTimeout(revertInteraction, 3000);
   }
-}
+};
 
 const initializeResetTarget = event => {
   resetTarget = document.querySelector('header em');
   resetTarget.onclick = resetTargetHandler;
-}
+};
 
 const clearButtonHandler = event => {
   clearReset();
-  enteredCode = '';
+  removeEnteredDigit();
   updateDisplay();
 };
 
